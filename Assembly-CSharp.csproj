@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Nodes\Prop.cs" />
+    <Compile Include="Assets\Scripts\Interactables\Reactors\LightReactor.cs" />
     <Compile Include="Assets\Scripts\Interactables\Switcher.cs" />
     <Compile Include="Assets\Scripts\UI\InventoryDisplay.cs" />
     <Compile Include="Assets\Scripts\Interactables\Item.cs" />
@@ -66,17 +67,26 @@
     <Compile Include="Assets\Scripts\Interactables\ImageViewer.cs" />
     <Compile Include="Assets\Scripts\Nodes\Node.cs" />
     <Compile Include="Assets\Scripts\Interactables\Reactors\StateReactor.cs" />
+    <Compile Include="Assets\Imported\Old Torch\Script\FlickLight.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Interactables\Reactors\SpawnReactor.cs" />
     <Compile Include="Assets\Scripts\Interactables\Collector.cs" />
+    <Compile Include="Assets\Scripts\Interactables\Reactors\MoveReactor.cs" />
     <Compile Include="Assets\Scripts\Camera\MousePOV.cs" />
     <Compile Include="Assets\Scripts\Interactables\Interactable.cs" />
+    <Compile Include="Assets\Imported\Dynamic Flickering Light\FlickeringLight.cs" />
     <Compile Include="Assets\Scripts\Nodes\Waypoint.cs" />
+    <Compile Include="Assets\Scripts\UI\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Nodes\Location.cs" />
     <Compile Include="Assets\Scripts\Interactables\Reactors\ColorReactor.cs" />
     <Compile Include="Assets\Scripts\Interactables\Observer.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraRig.cs" />
     <Compile Include="Assets\Scripts\Interactables\IVCanvas.cs" />
     <Compile Include="Assets\Scripts\Interactables\ObsCamera.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Imported\VaseEgyptFree\Readme.txt" />
+    <None Include="Assets\Imported\Dynamic Flickering Light\readme.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

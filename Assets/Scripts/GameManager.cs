@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager ins;
     public IVCanvas ivCanvas;
+    public GameObject pauseMenu;
     public ObsCamera obsCamera;
     public InventoryDisplay inventoryDisplay;
 
@@ -17,6 +18,13 @@ public class GameManager : MonoBehaviour
 
     public CameraRig rig;
 
+    public Texture2D cursorTextureLoc;
+    public Texture2D cursorTextureProp;
+    public Texture2D cursorTextureDefault;
+
+    public bool isPaused = false;
+
+
     private void Awake()
     {
         ins = this;
@@ -27,6 +35,14 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         startingNode.Arrive();
+        if (cursorTextureDefault != null)
+        {
+            Cursor.SetCursor(GameManager.ins.cursorTextureDefault, Vector2.zero, CursorMode.Auto);
+        }
+        else
+        {
+            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        }
     }
     private void Update()
     {
@@ -44,5 +60,32 @@ public class GameManager : MonoBehaviour
             }
             currentNode.GetComponent<Prop>().loc.Arrive();
         }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isPaused)
+            {
+                ResumeGame();
+            }
+            else 
+            {
+                PauseGame();
+            }
+        }
+    }
+
+    public void PauseGame()
+    {
+        Debug.Log("PAUSE GAME");
+        pauseMenu.SetActive(true);
+        isPaused = true;
+        Time.timeScale = 0f;
+    }
+
+    public void ResumeGame()
+    {
+        Debug.Log("RESUME GAME");
+        pauseMenu.SetActive(false); 
+        isPaused = false;
+        Time.timeScale = 1f;
     }
 }

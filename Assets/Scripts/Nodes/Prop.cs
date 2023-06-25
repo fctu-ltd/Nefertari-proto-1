@@ -41,4 +41,12 @@ public class Prop : Node
             inter.enabled = false;
         }
     }
+
+    public override void OnMouseEnter()
+    {
+        if (GameManager.ins.cursorTextureProp != null)
+        {
+            Cursor.SetCursor(GameManager.ins.cursorTextureProp, hotSpot, cursorMode);
+        }
+    }
 }
